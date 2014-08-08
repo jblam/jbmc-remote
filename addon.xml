@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<addon
+  id="webinterface.jbmc-remote"
+  version="0.1.0"
+  name="JBMC remote"
+  provider-name="jblam">
+  <requires>
+    <import addon="xbmc.gui" version="4.0.0"/>
+    <import addon="xbmc.json" version="6.0.0"/>
+  </requires>
+  <extension
+    point="xbmc.gui.webinterface"/>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en">JBMC Web Interface.</summary>
+    <summary lang="en_AU">JBMC Web Interface.</summary>
+    <summary lang="en_NZ">JBMC Web Interface.</summary>
+    <summary lang="en_US">JBMC Web Interface.</summary>
+    <description lang="en">Jblam's web interface for XBMC; Designed for devices of many resolutions</description>
+    <description lang="en_AU">Jblam's web interface for XBMC; Designed for devices of many resolutions</description>
+    <description lang="en_NZ">Jblam's web interface for XBMC; Designed for devices of many resolutions</description>
+    <description lang="en_US">Jblam's web interface for XBMC; Designed for devices of many resolutions</description>
+    <platform>all</platform>
+  </extension>
+</addon>
