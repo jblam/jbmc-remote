@@ -1,21 +1,4 @@
-const rpcLogNone = 0;
-const rpcLogError = 1;
-const rpcLogSuccess = 2;
-
-let rpcLogLevel = 1;
-
-function logPromise(x) { console.log(x); return x; }
-function errorPromise(x) { console.error(x); throw x; }
-
-let rpcId = 1;
-function RpcObject(method, params) {
-  this.method = method;
-  if (params) { this.params = params; }
-  this.id = rpcId++;
-  this.jsonrpc = "2.0";
-}
-
-function RpcPromise(data) {
+function RpcXhrPromise(data) {
   const method = 'POST';
   const endpoint = '/jsonrpc';
   var p = new Promise(function (resolve, reject) {
@@ -60,11 +43,11 @@ function RpcPromise(data) {
 }
 
 function introspectAll() {
-  RpcPromise(new RpcObject("JSONRPC.Introspect")).then(logPromise);
+  RpcXhrPromise(new RpcObject("JSONRPC.Introspect")).then(logPromise);
 }
 
 function introspectCommand(command) {
-  return RpcPromise(new RpcObject("JSONRPC.Introspect", {filter: { id: command, type: "method"} } ))
+  return RpcXhrPromise(new RpcObject("JSONRPC.Introspect", {filter: { id: command, type: "method"} } ))
    .then(result => {
      console.log(result);
      return result;
