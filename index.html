@@ -3,10 +3,26 @@
 	<head>
 		<title>JBMC remote</title>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
 		<script src="rpc.js"></script>
 		<script src="rpc-websocket.js"></script>
+		<script src="ui.js"></script>
 	</head>
 	<body>
 		<h1>JBMC remote</h1>
+		<div class="dpad" tabindex="1">
+			<link rel="stylesheet" href="dpad.css">
+			<button type="button" class="dpad-up">up</button>
+			<button type="button" class="dpad-down">down</button>
+			<div class="dpad-middle">
+				<button type="button" class="dpad-left">left</button>
+				<button type="button" class="dpad-right">right</button>
+			</div>
+			<div class="dpad-bottom">
+				<button type="button" class="dpad-back">back</button>
+				<button type="button" class="dpad-menu">context-menu</button>
+				<button type="button" class="dpad-select">select</button>
+			</div>
+		</div>
 	</body>
 </html>
