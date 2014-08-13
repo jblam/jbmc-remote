@@ -1,0 +1,38 @@
+nav {
+    box-sizing:border-box;
+    position:fixed;
+    background:#eef;
+    right:100%;
+    bottom:0px;
+    top:0px;
+    width:150px;
+    padding-right:40px;
+    border-right:solid 2px black;
+    transition:transform 0.5s;
+}
+
+nav #nav-open-label {
+    position:absolute;
+    display:block;
+    content:'=';
+    left:100%;
+    top:2em;
+    width:1em;
+    height:2em;
+    background:#ccd;
+    text-align:center;
+    line-height:1.5em;
+    padding-top:0.5em;
+    border-radius:0px 10px 10px 0px;
+    border:solid 2px black;
+    border-left-style:none;
+    cursor:pointer;
+}
+
+input[type=checkbox].hidden-toggle {
+    display:none;
+}
+
+#nav-open:checked + nav {
+    transform:translate(150px, 0px);
+}
