@@ -6,25 +6,23 @@ nav {
     bottom:0px;
     top:0px;
     width:150px;
-    padding-right:40px;
-    border-right:solid 2px black;
+    padding:5px;
+    border-right:solid 2px #999;
     transition:transform 0.5s;
 }
 
 nav #nav-open-label {
     position:absolute;
     display:block;
-    content:'=';
     left:100%;
-    top:2em;
+    top:1px;
     width:1em;
     height:2em;
-    background:#ccd;
+    background:#eee;
     text-align:center;
-    line-height:1.5em;
-    padding-top:0.5em;
-    border-radius:0px 10px 10px 0px;
-    border:solid 2px black;
+    line-height:1.75em;
+    border-radius:0px 5px 5px 0px;
+    border:solid 2px #999;
     border-left-style:none;
     cursor:pointer;
 }
@@ -35,4 +33,36 @@ input[type=checkbox].hidden-toggle {
 
 #nav-open:checked + nav {
     transform:translate(150px, 0px);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0px;
+    margin:0px;
+    width:100%;
+}
+nav button {
+    position: relative;
+    width:100%;
+    border:solid 1px;
+    margin:5px 0px;
+    min-height: 40px;
+    padding-left:45px;
+    transition:background 0.5s;
+    text-align:left;
+}
+nav button:before {
+    content:'img';
+    text-align: center;
+    line-height: 35px;
+    display:block;
+    position: absolute;
+    top:-1px;
+    left:-1px;
+    background:red;
+    width:40px;
+    height:40px;
+}
+nav button:hover {
+    background:#acf;
 }

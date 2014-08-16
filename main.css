@@ -1,11 +1,12 @@
+* { box-sizing: border-box; }
 body {
   font-family: sans-serif;
   margin:0px;
 }
 h1 {
-  padding:0.25em;
+  padding:0.4em 1em;
   margin-top:0px;
-  font-size:1.2em;
+  font-size:1.1em;
   background:#eee;
   border-bottom: solid 2px #999;
 }
