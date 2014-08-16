@@ -7,7 +7,18 @@
 		<script src="rpc.js"></script>
 		<script src="rpc-websocket.js"></script>
 		<script src="dpad.js"></script>
+		<script src="media-library.js"></script>
 		<link rel="stylesheet" href="main.css">
+		<link rel="stylesheet" href="media-library.css">
+		<template id="listing-template">
+			<div class="listing">
+				<img class="listing-thumb">
+				<div>
+					<span class="listing-title"></span>
+					<span class="listing-description"></span>
+				</div>
+			</div>
+		</template>
 	</head>
 	<body>
 		<h1>JBMC remote</h1>
@@ -22,6 +33,8 @@
 				<li>Other</li>
 			</ul>
 		</nav>
+		<div class="main-listing">
+		</div>
 		<div class="dpad" tabindex="1">
 			<link rel="stylesheet" href="dpad.css">
 			<button type="button" class="dpad-up">up</button>

@@ -1,0 +1,6 @@
+.listing {
+  border:solid 1px grey;
+  border-radius: 5px;
+  display:flex;
+  align-items:center;
+}
