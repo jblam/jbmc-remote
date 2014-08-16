@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function ui_closure() {
    {cls:".dpad-pg-up", cmd:"Input.ExecuteAction", param: { action: "pageup" } },
    {cls:".dpad-pg-down", cmd:"Input.ExecuteAction", param: { action: "pagedown" } }]
    .forEach(x => {
-    document.querySelector(x.cls).onclick = () => RPC.send(x.cmd, x.param);
+    document.querySelector(x.cls).onclick = () => RPC.send(new RpcObject(x.cmd, x.param));
   });
 
   document.querySelector(".dpad").onkeypress = evt => {
@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded", function ui_closure() {
 	  case " ":
         cmd = "Input.Select"
         break;
+	  case "Home":
+	    cmd = "Input.Home";
+		break;
       case "Backspace":
         cmd = "Input.Back"
         break;
@@ -40,11 +43,11 @@ document.addEventListener("DOMContentLoaded", function ui_closure() {
 	    cmd = "Input.ContextMenu";
 		break;
 	  case "PageUp":
-	    cmd="Input.ExecuteCommand";
+	    cmd="Input.ExecuteAction";
 		param = { action: "pageup" };
 		break;
 	  case "PageDown":
-	    cmd="Input.ExecuteCommand";
+	    cmd="Input.ExecuteAction";
 		param = { action: "pagedown" };
 		break;
 		
@@ -53,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function ui_closure() {
     }
 	
     if (cmd) {
-      RPC.send(cmd);
+      RPC.send(new RpcObject(cmd, param));
     } else {
       console.info("Unhandled keypress", evt);
     }
