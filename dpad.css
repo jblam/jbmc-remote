@@ -10,12 +10,23 @@
 .dpad-up {
   order:0;
 }
+.dpad-pg-up {
+  order:0;
+}
+.dpad-pg-down {
+  order:1;
+}
+.dpad-pg-up, .dpad-pg-down {
+  align-self: flex-end;
+}
+
 .dpad-middle {
   order:1;
   height:100px;
 }
 .dpad-bottom {
   order:9;
+  margin-top:5px;
 }
 .dpad-middle, .dpad-bottom {
   width:100%;

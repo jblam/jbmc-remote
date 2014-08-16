@@ -6,37 +6,52 @@ document.addEventListener("DOMContentLoaded", function ui_closure() {
    {cls:".dpad-right", cmd:"Input.Right"},
    {cls:".dpad-back", cmd:"Input.Back"},
    {cls:".dpad-menu", cmd:"Input.ContextMenu"},
-   {cls:".dpad-select", cmd:"Input.Select"}].forEach(x => {
-    document.querySelector(x.cls).onclick = () => RPC.send(x.cmd);
+   {cls:".dpad-select", cmd:"Input.Select"},
+   {cls:".dpad-home", cmd:"Input.Home"},
+   {cls:".dpad-pg-up", cmd:"Input.ExecuteAction", param: { action: "pageup" } },
+   {cls:".dpad-pg-down", cmd:"Input.ExecuteAction", param: { action: "pagedown" } }]
+   .forEach(x => {
+    document.querySelector(x.cls).onclick = () => RPC.send(x.cmd, x.param);
   });
 
   document.querySelector(".dpad").onkeypress = evt => {
-    var cmd;
-    switch (evt.keyCode) {
-      case 13: // enter
+    var cmd, param;
+    switch (evt.key) {
+      case "Enter":
+	  case " ":
         cmd = "Input.Select"
         break;
-      case 8: // backspace
+      case "Backspace":
         cmd = "Input.Back"
         break;
-      case 37:
+      case "Left":
         cmd = "Input.Left";
         break;
-      case 38:
+      case "Up":
         cmd = "Input.Up";
         break;
-      case 39:
+      case "Right":
         cmd = "Input.Right";
         break;
-      case 40:
+      case "Down":
         cmd = "Input.Down";
         break;
+	  case "c":
+	    cmd = "Input.ContextMenu";
+		break;
+	  case "PageUp":
+	    cmd="Input.ExecuteCommand";
+		param = { action: "pageup" };
+		break;
+	  case "PageDown":
+	    cmd="Input.ExecuteCommand";
+		param = { action: "pagedown" };
+		break;
+		
       default:
         break;
     }
-    if (!cmd && evt.charCode == 99) { // "c"
-      cmd = "Input.ContextMenu";
-    }
+	
     if (cmd) {
       RPC.send(cmd);
     } else {
