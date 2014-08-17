@@ -3,4 +3,32 @@
   border-radius: 5px;
   display:flex;
   align-items:center;
+  margin:5px;
+    height:50px;
+}
+
+.listing-thumb {
+    display:block;
+  box-sizing:content-box;
+    min-width:50px; /* for some reason, just "width" doesn't work */
+  height:50px;
+  margin-right:5px;
+}
+
+.listing > div {
+    flex-grow:1;
+    max-height:100%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    margin:2px 0px;
+}
+
+.listing-title {
+  margin-right:1em;
+}
+
+.listing-description {
+  font-style:italic;
+  font-size:0.866em;
+  color:#999;
 }
