@@ -1,0 +1,73 @@
+<style>
+svg { width:10px; height:10px; }
+button:hover use { background:orange; stroke:red; }
+.btn {
+	padding:0px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	border: none;
+	background-color: transparent;
+	display:block;
+}
+.btn.lnd {
+	width: 5em;
+	height: 2em;
+}
+.btn.prt {
+	width:2em;
+	height:5em;
+}
+.btn.up {
+	background-image: url('arrows.svg#up-regular');
+}
+.btn.down {
+	background-image: url('arrows.svg#down-regular');
+}
+.btn.left {
+	background-image: url('arrows.svg#left-regular');
+}
+.btn.right {
+	background-image: url('arrows.svg#right-regular');
+}
+.btn.downdown {
+	background-image: url('arrows.svg#double-down-regular');
+}
+.btn.down:hover {
+	background-image: url('arrows.svg#down-hover');
+}
+.btn.up:hover {
+	background-image: url('arrows.svg#up-hover');
+}
+.btn.left:hover {
+	background-image: url('arrows.svg#left-hover');
+}
+.btn.right:hover {
+	background-image: url('arrows.svg#right-hover');
+}
+.btn.downdown:hover {
+	background-image: url('arrows.svg#double-down-hover');
+}
+.btn.down:active {
+	background-image: url('arrows.svg#down-active');
+}
+.btn.up:active {
+	background-image: url('arrows.svg#up-active');
+}
+.btn.left:active {
+	background-image: url('arrows.svg#left-active');
+}
+.btn.right:active {
+	background-image: url('arrows.svg#right-active');
+}
+.btn.downdown:active {
+	background-image: url('arrows.svg#double-down-active');
+}
+</style>
+<h1>SVG within button</h1>
+
+<button type="button" class="btn lnd up"></button>
+<button type="button" class="btn prt left"></button>
+<button type="button" class="btn prt right"></button>
+<button type="button" class="btn lnd down"></button>
+<button type="button" class="btn lnd downdown"></button>
