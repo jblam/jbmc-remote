@@ -3,18 +3,42 @@
   flex-direction:column;
   border:1px solid black;
   align-items:center;
+    width:100px;
+    height:100px;
+    position:fixed;
+    bottom:0px;
+    right:0px;
+    overflow:hidden;
+}
+.dpad button {
+	padding:0px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	border: none;
+	background-color: transparent;
+	display:block;
 }
 .dpad-up, .dpad-down {
   width:100px;
 }
 .dpad-up {
   order:0;
+  background-image: url('arrows.svg#up-regular');
 }
 .dpad-pg-up {
   order:0;
+  background-image: url('arrows.svg#double-up-regular');
 }
 .dpad-pg-down {
   order:1;
+  background-image: url('arrows.svg#double-down-regular');
+}
+.dpad-left {
+  background-image: url('arrows.svg#left-regular');
+}
+.dpad-right {
+  background-image: url('arrows.svg#right-regular');
 }
 .dpad-pg-up, .dpad-pg-down {
   align-self: flex-end;
@@ -35,6 +59,7 @@
 }
 .dpad-down {
   order:2;
+  background-image: url('arrows.svg#down-regular');
 }
 .dpad, .dpad button {
   -moz-user-select: none;
