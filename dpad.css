@@ -1,37 +1,78 @@
 .dpad {
-  display:flex;
-  flex-direction:column;
   border:1px solid black;
-  align-items:center;
     width:100px;
-    height:100px;
+    height:125px;
     position:fixed;
     bottom:0px;
     right:0px;
     overflow:hidden;
+  background:white;
 }
+.dpad-main {
+  position:absolute;
+  width:100%;
+  height:100px;
+}
+.dpad-extra {
+  position:absolute;
+  width:100%;
+  height:20px;
+  bottom:0;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+}
+
 .dpad button {
 	padding:0px;
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
 	border: none;
-	background-color: transparent;
+	background-color: #fee;
 	display:block;
+	font-size:0px;
+	color:transparent;
+  position:absolute;
 }
+
+.dpad-extra button {
+  position:static; /* override .dpad button */
+  flex:0 0 20%;
+  height:100%;
+}
+
 .dpad-up, .dpad-down {
-  width:100px;
+  width:70%;
+  left:15%;
 }
+.dpad-left, .dpad-right {
+  height:70%;
+  top:15%;
+}
+.dpad-left, .dpad-right, .dpad-pg-down, .dpad-pg-up {
+  width:15%;
+}
+.dpad-up, .dpad-down, .dpad-pg-down, .dpad-pg-up {
+  height:15%;
+}
+.dpad-up, .dpad-pg-up {
+  top:0;
+}
+.dpad-down, .dpad-pg-down {
+  bottom:0;
+}
+.dpad-right, .dpad-pg-down, .dpad-pg-up {
+  right:0;
+}
+
 .dpad-up {
-  order:0;
   background-image: url('arrows.svg#up-regular');
 }
 .dpad-pg-up {
-  order:0;
   background-image: url('arrows.svg#double-up-regular');
 }
 .dpad-pg-down {
-  order:1;
   background-image: url('arrows.svg#double-down-regular');
 }
 .dpad-left {
@@ -40,27 +81,10 @@
 .dpad-right {
   background-image: url('arrows.svg#right-regular');
 }
-.dpad-pg-up, .dpad-pg-down {
-  align-self: flex-end;
-}
-
-.dpad-middle {
-  order:1;
-  height:100px;
-}
-.dpad-bottom {
-  order:9;
-  margin-top:5px;
-}
-.dpad-middle, .dpad-bottom {
-  width:100%;
-  display:flex;
-  justify-content: space-between;
-}
 .dpad-down {
-  order:2;
   background-image: url('arrows.svg#down-regular');
 }
+
 .dpad, .dpad button {
   -moz-user-select: none;
 }
