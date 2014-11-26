@@ -114,6 +114,12 @@ var RPC = (function RPC_closure() {
 	  wp.then(ws => ws.send(JSON.stringify(cmd)));
 	  return p;
 	}
+	
+	function inspectCommand(cmd) {
+		sendCommand(cmd).then(
+			x => { console.log(x); return x; },
+			x => { console.error(x); throw x; });
+	}
 
 	// couple of basic tests to verify that real commands resolve with their response,
 	// and illegal commands reject with an error
@@ -127,5 +133,7 @@ var RPC = (function RPC_closure() {
 		addNotificationHandler:addNotificationHandler,
 		removeNotificationHandler:removeNotificationHandler,
 		send:sendCommand,
+		inspect:inspectCommand,
+		introspect:function() { return inspectCommand("JSONRPC.Introspect"); }
 	};
 }());
